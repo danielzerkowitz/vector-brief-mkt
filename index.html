@@ -25,7 +25,7 @@
         <a href="#tiers">Tiers</a>
         <a href="#process">Process</a>
         <a href="#trust">Trust</a>
-        <a href="#request">Request</a>
+        <a href="#request">Contact</a>
       </nav>
     </header>
 
@@ -42,11 +42,12 @@
           <p class="hero-copy">
             Vector Brief produces destination-specific security briefings for people entering
             volatile, remote, or high-consequence environments. Automation accelerates the report.
-            A human security specialist verifies the final intelligence.
+            A human security specialist verifies the final intelligence, then your requirement is
+            scoped directly with your team.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#request">Request a briefing</a>
-            <a class="button secondary" href="#tiers">Compare tiers</a>
+            <a class="button primary" href="#request">Request a consultation</a>
+            <a class="button secondary" href="#tiers">View briefing scopes</a>
           </div>
         </div>
         <aside class="mission-card" aria-label="Current mission status example">
@@ -88,8 +89,8 @@
 
       <section class="section tiers" id="tiers">
         <div class="section-heading">
-          <p class="eyebrow">Select Briefing Depth</p>
-          <h2>Three tiers. One verification standard.</h2>
+          <p class="eyebrow">Briefing Scope</p>
+          <h2>Three depth levels. Bespoke delivery.</h2>
         </div>
         <div class="tier-grid">
           <article class="tier-card">
@@ -107,7 +108,7 @@
               <li>Key movement precautions</li>
               <li>Human specialist verification</li>
             </ul>
-            <a href="#request">Request Tier 01</a>
+            <a href="#request">Discuss Essential</a>
           </article>
 
           <article class="tier-card featured">
@@ -125,7 +126,7 @@
               <li>Medical, unrest, crime, and transport risks</li>
               <li>Mitigation checklist for traveler profile</li>
             </ul>
-            <a href="#request">Request Tier 02</a>
+            <a href="#request">Discuss Operational</a>
           </article>
 
           <article class="tier-card">
@@ -143,7 +144,7 @@
               <li>Route, accommodation, and timing review</li>
               <li>Specialist notes and confidence assessment</li>
             </ul>
-            <a href="#request">Request Tier 03</a>
+            <a href="#request">Discuss Complete</a>
           </article>
         </div>
       </section>
@@ -164,17 +165,18 @@
           <h2>Automated speed. Human judgment.</h2>
           <ol>
             <li>
-              <strong>Submit travel context.</strong>
-              Destination, dates, traveler profile, route, accommodation, and mission sensitivity.
+              <strong>Share contact details.</strong>
+              Tell us who should be contacted, the likely destination, and the broad requirement.
             </li>
             <li>
-              <strong>Generate the intelligence draft.</strong>
-              Vector Brief compiles current security, medical, logistics, and movement factors.
+              <strong>Scope the requirement.</strong>
+              A specialist confirms the traveler profile, route, dates, sensitivity, and briefing
+              depth before any package is prepared.
             </li>
             <li>
-              <strong>Specialist verification.</strong>
-              A security human reviews the report, resolves weak signals, and validates the
-              briefing before release.
+              <strong>Prepare and verify.</strong>
+              Vector Brief compiles the intelligence draft, then a security human reviews and
+              validates the briefing before release.
             </li>
           </ol>
         </div>
@@ -211,31 +213,63 @@
 
       <section class="request" id="request">
         <div>
-          <p class="eyebrow">Request Briefing</p>
-          <h2>Prepared before deployment. Verified before delivery.</h2>
+          <p class="eyebrow">Contact Funnel</p>
+          <h2>Leave your details. We will scope the right briefing with you.</h2>
+          <p class="request-copy">
+            Vector Brief engagements are tailored around destination, traveler exposure, timeline,
+            and duty-of-care requirements. Share the essentials and a specialist will follow up.
+          </p>
         </div>
         <form class="request-form">
           <label>
-            Destination
+            Full name
+            <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+          </label>
+          <label>
+            Work email
+            <input
+              type="email"
+              name="email"
+              placeholder="name@company.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+          <label>
+            Organization
+            <input
+              type="text"
+              name="organization"
+              placeholder="Company or organization"
+              autocomplete="organization"
+            />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="+32 ..." autocomplete="tel" />
+          </label>
+          <label>
+            Likely destination
             <input type="text" name="destination" placeholder="City, country, or route" />
           </label>
           <label>
-            Briefing tier
+            Briefing scope
             <select name="tier">
+              <option>Not sure yet</option>
               <option>Tier 01 - Essential</option>
               <option>Tier 02 - Operational</option>
               <option>Tier 03 - Complete</option>
             </select>
           </label>
           <label>
-            Traveler context
+            Requirement notes
             <textarea
               name="context"
               rows="4"
-              placeholder="Dates, traveler profile, purpose, concerns"
+              placeholder="Dates, traveler profile, purpose, concerns, or timeline"
             ></textarea>
           </label>
-          <button type="submit">Start secure request</button>
+          <button type="submit">Send contact details</button>
         </form>
       </section>
     </main>

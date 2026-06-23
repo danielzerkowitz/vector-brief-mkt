@@ -318,9 +318,14 @@ footer {
 
 .intro p:last-child,
 .process-copy p,
+.request-copy,
 .trust-grid p,
 .tier-card p {
   color: rgba(233, 228, 219, 0.72);
+}
+
+.request-copy {
+  max-width: 540px;
 }
 
 .section-heading {
