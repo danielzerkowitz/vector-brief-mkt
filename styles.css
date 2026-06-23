@@ -1,0 +1,688 @@
+:root {
+  --midnight: #0b1210;
+  --black: #080b0c;
+  --steel: #59606d;
+  --bone: #e9e4db;
+  --muted: #b8b2a8;
+  --rescue: #f05a28;
+  --field: #3e463b;
+  --line: rgba(233, 228, 219, 0.18);
+  --panel: rgba(8, 11, 12, 0.78);
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--bone);
+  background:
+    radial-gradient(circle at 72% 18%, rgba(240, 90, 40, 0.1), transparent 28rem),
+    linear-gradient(180deg, #0a0d0e 0%, var(--midnight) 54%, #070909 100%);
+  font-family:
+    "IBM Plex Sans",
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  line-height: 1.55;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(233, 228, 219, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 228, 219, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 90%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 40px, var(--max));
+  margin: 22px auto 0;
+  padding: 12px 0;
+  color: var(--bone);
+}
+
+.brand {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--black);
+  background: var(--bone);
+  border-radius: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: rgba(233, 228, 219, 0.78);
+}
+
+nav a:hover {
+  color: var(--rescue);
+}
+
+.hero {
+  position: relative;
+  min-height: 790px;
+  display: grid;
+  align-items: center;
+  padding: 120px 20px 70px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-media,
+.hero-media img,
+.hero-overlay,
+.grid-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(8, 11, 12, 0.98) 0%, rgba(8, 11, 12, 0.8) 34%, rgba(8, 11, 12, 0.34) 72%),
+    linear-gradient(180deg, rgba(8, 11, 12, 0.22), #080b0c 98%);
+}
+
+.grid-layer {
+  background-image:
+    linear-gradient(rgba(233, 228, 219, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 228, 219, 0.06) 1px, transparent 1px);
+  background-size: 78px 78px;
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--rescue);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family:
+    Impact,
+    "Arial Narrow",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 28px;
+  font-size: clamp(3.8rem, 7.2vw, 6.9rem);
+}
+
+h2 {
+  font-size: clamp(2.6rem, 5vw, 5.3rem);
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.hero-copy {
+  max-width: 620px;
+  color: rgba(233, 228, 219, 0.78);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button,
+.tier-card a,
+.request-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid var(--bone);
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.primary,
+.request-form button {
+  color: #130b08;
+  background: var(--rescue);
+  border-color: var(--rescue);
+}
+
+.secondary {
+  background: rgba(8, 11, 12, 0.54);
+}
+
+.mission-card {
+  position: absolute;
+  right: max(20px, calc((100vw - var(--max)) / 2));
+  bottom: 70px;
+  z-index: 3;
+  width: min(360px, calc(100% - 40px));
+  padding: 22px;
+  color: rgba(233, 228, 219, 0.78);
+  background: rgba(8, 11, 12, 0.78);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.mission-card p {
+  margin: 0 0 8px;
+}
+
+.status-dot {
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin-bottom: 14px;
+  background: var(--rescue);
+}
+
+.signal-strip,
+.section,
+.request,
+footer {
+  width: min(100% - 40px, var(--max));
+  margin: 0 auto;
+}
+
+.signal-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+
+.signal-strip div {
+  padding: 22px 24px;
+  border-right: 1px solid var(--line);
+  color: rgba(233, 228, 219, 0.82);
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.signal-strip div:last-child {
+  border-right: 0;
+}
+
+.signal-strip span {
+  display: block;
+  color: var(--rescue);
+}
+
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.intro p:last-child,
+.process-copy p,
+.trust-grid p,
+.tier-card p {
+  color: rgba(233, 228, 219, 0.72);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  max-width: 760px;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tier-card,
+.trust-grid article {
+  position: relative;
+  padding: 28px;
+  background:
+    linear-gradient(180deg, rgba(233, 228, 219, 0.045), rgba(233, 228, 219, 0.015)),
+    rgba(8, 11, 12, 0.68);
+  border: 1px solid var(--line);
+}
+
+.tier-card.featured {
+  border-color: rgba(240, 90, 40, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(240, 90, 40, 0.16);
+}
+
+.tier-head span {
+  color: var(--rescue);
+  font-family: "Courier New", monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tier-card ul {
+  min-height: 172px;
+  padding: 0;
+  margin: 28px 0;
+  list-style: none;
+}
+
+.tier-card li {
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  color: rgba(233, 228, 219, 0.82);
+}
+
+.tier-card li::before {
+  margin-right: 10px;
+  color: var(--rescue);
+  content: "+";
+}
+
+.tier-card a {
+  width: 100%;
+}
+
+.process {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(320px, 0.8fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.map-panel {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 32%, rgba(240, 90, 40, 0.12), transparent 9rem),
+    linear-gradient(145deg, rgba(62, 70, 59, 0.64), rgba(8, 11, 12, 0.92));
+  border: 1px solid var(--line);
+}
+
+.map-panel::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(rgba(233, 228, 219, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 228, 219, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.route-line {
+  position: absolute;
+  top: 44%;
+  left: 18%;
+  width: 66%;
+  height: 2px;
+  background: var(--bone);
+  transform: rotate(-17deg);
+}
+
+.route-line::before,
+.route-line::after {
+  position: absolute;
+  top: -42px;
+  width: 170px;
+  height: 84px;
+  border: 1px dashed rgba(240, 90, 40, 0.68);
+  border-radius: 50%;
+  content: "";
+}
+
+.route-line::before {
+  left: 32%;
+}
+
+.route-line::after {
+  right: -24px;
+  transform: rotate(31deg);
+}
+
+.target {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--rescue);
+}
+
+.target-one {
+  top: 35%;
+  left: 23%;
+}
+
+.target-two {
+  top: 43%;
+  left: 55%;
+}
+
+.target-three {
+  top: 28%;
+  right: 22%;
+}
+
+.data-callout {
+  position: absolute;
+  right: 34px;
+  bottom: 34px;
+  padding: 18px;
+  background: rgba(8, 11, 12, 0.76);
+  border: 1px solid var(--line);
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+}
+
+.data-callout span {
+  display: block;
+  color: rgba(233, 228, 219, 0.64);
+  font-size: 0.72rem;
+}
+
+.data-callout strong {
+  color: var(--rescue);
+  font-size: 0.84rem;
+}
+
+ol {
+  padding: 0;
+  margin: 34px 0 0;
+  list-style: none;
+  counter-reset: steps;
+}
+
+ol li {
+  position: relative;
+  padding: 0 0 26px 52px;
+  color: rgba(233, 228, 219, 0.74);
+  counter-increment: steps;
+}
+
+ol li::before {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: var(--rescue);
+  font-family: "Courier New", monospace;
+  content: "0" counter(steps);
+}
+
+ol strong {
+  display: block;
+  color: var(--bone);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.icon {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 28px;
+  place-items: center;
+  color: var(--rescue);
+  border: 1px solid var(--line);
+  font-size: 1.4rem;
+}
+
+.trust-grid h3 {
+  font-size: 1.52rem;
+}
+
+.request {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(340px, 0.65fr);
+  gap: 70px;
+  align-items: start;
+  padding: 100px 0;
+}
+
+.request-form {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(233, 228, 219, 0.04);
+  border: 1px solid var(--line);
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: rgba(233, 228, 219, 0.78);
+  font-family: "Courier New", monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  color: var(--bone);
+  background: rgba(8, 11, 12, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 13px 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0 48px;
+  color: rgba(233, 228, 219, 0.58);
+  border-top: 1px solid var(--line);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    position: absolute;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    align-items: start;
+    padding-top: 130px;
+    padding-bottom: 36px;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(8, 11, 12, 0.95), rgba(8, 11, 12, 0.56)),
+      linear-gradient(180deg, rgba(8, 11, 12, 0.14), #080b0c 96%);
+  }
+
+  .mission-card {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: min(100%, var(--max));
+    margin: 32px auto 0;
+  }
+
+  .signal-strip,
+  .intro,
+  .tier-grid,
+  .process,
+  .trust-grid,
+  .request {
+    grid-template-columns: 1fr;
+  }
+
+  .signal-strip div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .signal-strip div:last-child {
+    border-bottom: 0;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .tier-card ul {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .signal-strip,
+  .section,
+  .request,
+  footer {
+    width: min(100% - 28px, var(--max));
+  }
+
+  h1 {
+    font-size: 3.7rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .section,
+  .request {
+    padding: 70px 0;
+  }
+
+  .hero-actions {
+    display: grid;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .map-panel {
+    min-height: 340px;
+  }
+
+  footer {
+    display: block;
+  }
+}
