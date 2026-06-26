@@ -220,7 +220,7 @@
             and duty-of-care requirements. Share the essentials and a specialist will follow up.
           </p>
         </div>
-        <form class="request-form">
+        <form class="request-form" action="https://formspree.io/f/xaqgoevk" method="POST">
           <label>
             Full name
             <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
@@ -269,7 +269,11 @@
               placeholder="Dates, traveler profile, purpose, concerns, or timeline"
             ></textarea>
           </label>
+          <input type="hidden" name="_subject" value="New Vector Brief consultation request" />
+          <!-- Honeypot: bots fill this, Formspree silently discards those submissions. -->
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit">Send contact details</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>

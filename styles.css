@@ -582,6 +582,33 @@ textarea {
   resize: vertical;
 }
 
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.form-status {
+  margin: 0;
+  min-height: 1.1em;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.form-status--success {
+  color: var(--bone);
+}
+
+.form-status--error {
+  color: var(--rescue);
+}
+
 footer {
   display: flex;
   justify-content: space-between;
